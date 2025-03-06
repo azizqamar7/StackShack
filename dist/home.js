@@ -1,0 +1,1 @@
+!function(e,o){"object"==typeof exports&&"object"==typeof module?module.exports=o():"function"==typeof define&&define.amd?define("home",[],o):"object"==typeof exports?exports.home=o():e.home=o()}(this,(()=>(console.log("Hello from Home folder"),{})));
