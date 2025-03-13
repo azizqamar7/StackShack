@@ -3,7 +3,3 @@
  */
 
 console.log('Hello from Global folder')
-
-import { functionName } from '../helpers/function-name'
-
-functionName()

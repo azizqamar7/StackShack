@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     ['global']: './src/global/index.js',
     ['home']: './src/home/index.js',
