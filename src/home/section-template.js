@@ -1,5 +1,6 @@
 import gsap from 'gsap'
 import { sectionMatterTab1 } from './matter-tab1'
+import { matterTabs } from './matter-tabs'
 
 export const sectionTemplate = () => {
   const tl = gsap.timeline({
@@ -7,7 +8,8 @@ export const sectionTemplate = () => {
       trigger: '.feature_tabs',
       start: 'top 100%',
       onEnter: () => {
-        sectionMatterTab1()
+        // sectionMatterTab1()
+        matterTabs()
       },
     },
   })
