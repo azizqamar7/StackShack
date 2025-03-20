@@ -7,6 +7,7 @@ export const marqueeScrollIx = () => {
     marqueeList.forEach((marqueeItem) => {
       const marqueeDuration = marqueeItem.getAttribute('marquee-track')
       let isForward = marqueeItem.getAttribute('is-forward')
+      let isPause = marqueeItem.getAttribute('is-pause')
 
       const tl = gsap.timeline({ repeat: -1 })
 
@@ -23,6 +24,18 @@ export const marqueeScrollIx = () => {
           { x: '-50%' },
           { x: '0%', ease: 'none', duration: marqueeDuration, repeat: -1 }
         )
+      }
+
+      if (isPause == 'true') {
+        marqueeList.forEach((item) => {
+          item.addEventListener('mouseenter', () => {
+            tl.pause()
+          })
+
+          item.addEventListener('mouseleave', () => {
+            tl.resume()
+          })
+        })
       }
     })
   }

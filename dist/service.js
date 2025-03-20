@@ -10,11 +10,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("about", [], factory);
+		define("service", [], factory);
 	else if(typeof exports === 'object')
-		exports["about"] = factory();
+		exports["service"] = factory();
 	else
-		root["about"] = factory();
+		root["service"] = factory();
 })(this, () => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
@@ -70,26 +70,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/about/index.js":
-/*!****************************!*\
-  !*** ./src/about/index.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! gsap/ScrollTrigger */ \"./node_modules/gsap/ScrollTrigger.js\");\n/* harmony import */ var _section_commitment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./section-commitment */ \"./src/about/section-commitment.js\");\n/* harmony import */ var _helpers_marqueeScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/marqueeScroll */ \"./src/helpers/marqueeScroll.js\");\n/* harmony import */ var _section_horizontal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./section-horizontal */ \"./src/about/section-horizontal.js\");\n/* harmony import */ var _section_company__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./section-company */ \"./src/about/section-company.js\");\n/* harmony import */ var _section_secret__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./section-secret */ \"./src/about/section-secret.js\");\n/* harmony import */ var _section_hero__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./section-hero */ \"./src/about/section-hero.js\");\n/**\n * For About page js\n */\n\nconsole.log('Hello from About folder')\n\n;\n\n\n\n\n\n\n\n\nwindow.addEventListener('DOMContentLoaded', (event) => {\n  gsap__WEBPACK_IMPORTED_MODULE_6__[\"default\"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_7__.ScrollTrigger)\n\n  if (window.innerWidth > 991) {\n    (0,_section_hero__WEBPACK_IMPORTED_MODULE_5__.sectionHero)()\n  }\n\n  (0,_helpers_marqueeScroll__WEBPACK_IMPORTED_MODULE_1__.marqueeScrollIx)()\n\n  ;(0,_section_commitment__WEBPACK_IMPORTED_MODULE_0__.sectionCommitment)()\n\n  if (window.innerWidth > 767) {\n    (0,_section_horizontal__WEBPACK_IMPORTED_MODULE_2__.sectionHorizontal)()\n  }\n\n  (0,_section_company__WEBPACK_IMPORTED_MODULE_3__.sectionCompany)()\n\n  ;(0,_section_secret__WEBPACK_IMPORTED_MODULE_4__.sectionSecret)()\n})\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/about/index.js?");
-
-/***/ }),
-
-/***/ "./src/about/section-commitment.js":
-/*!*****************************************!*\
-  !*** ./src/about/section-commitment.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sectionCommitment: () => (/* binding */ sectionCommitment)\n/* harmony export */ });\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\n\nconst sectionCommitment = () => {\n  const tl = gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].timeline({\n    scrollTrigger: {\n      trigger: '[commitment-wrapper]',\n      start: 'top 70%',\n    },\n  })\n\n  tl.from('[commitment-item]', {\n    rotationX: '15deg',\n    stagger: 0.1,\n    opacity: 0,\n    ease: 'back.out(3)',\n    duration: 0.4,\n  })\n}\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/about/section-commitment.js?");
-
-/***/ }),
-
 /***/ "./src/about/section-company.js":
 /*!**************************************!*\
   !*** ./src/about/section-company.js ***!
@@ -100,36 +80,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/about/section-hero.js":
-/*!***********************************!*\
-  !*** ./src/about/section-hero.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sectionHero: () => (/* binding */ sectionHero)\n/* harmony export */ });\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\n\nconst sectionHero = () => {\n  const horizontalWrapper = document.querySelector('[about-hero-horizontail]')\n\n  const getScrollAmount = () => {\n    let horizontalWrapperWidth = horizontalWrapper.scrollWidth\n    return -(horizontalWrapperWidth - window.innerWidth)\n  }\n\n  const mainTl = gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].timeline({\n    scrollTrigger: {\n      trigger: '[section-about]',\n      start: 'top 10%',\n      end: `+=${getScrollAmount() * -1}`,\n      //   markers: true,\n      scrub: 1,\n      pin: true,\n    },\n  })\n\n  mainTl.to(horizontalWrapper, {\n    x: getScrollAmount,\n    ease: 'none',\n  })\n}\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/about/section-hero.js?");
-
-/***/ }),
-
-/***/ "./src/about/section-horizontal.js":
-/*!*****************************************!*\
-  !*** ./src/about/section-horizontal.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sectionHorizontal: () => (/* binding */ sectionHorizontal)\n/* harmony export */ });\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\n\nconst sectionHorizontal = () => {\n  const horizontalWrapper = document.querySelector('[about-horizontal]')\n\n  const getScrollAmount = () => {\n    let horizontalWrapperWidth = horizontalWrapper.scrollWidth\n    return -(\n      horizontalWrapperWidth -\n      window.innerWidth +\n      window.innerWidth * 0.2\n    )\n  }\n\n  const mainTl = gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].timeline({\n    scrollTrigger: {\n      trigger: '.about_horizontal',\n      start: 'top 20%',\n      end: `+=${getScrollAmount() * -1}`,\n      //   markers: true,\n      scrub: 1,\n      pin: true,\n    },\n  })\n\n  mainTl.to(horizontalWrapper, {\n    x: getScrollAmount,\n    ease: 'none',\n  })\n}\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/about/section-horizontal.js?");
-
-/***/ }),
-
-/***/ "./src/about/section-secret.js":
-/*!*************************************!*\
-  !*** ./src/about/section-secret.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sectionSecret: () => (/* binding */ sectionSecret)\n/* harmony export */ });\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\n\nconst sectionSecret = () => {\n  const tl = gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].timeline({\n    scrollTrigger: {\n      trigger: '[secret-ingredients]',\n      //   markers: true,\n      start: 'top 100%',\n      end: 'bottom 50%',\n      scrub: true,\n    },\n  })\n\n  tl.to('[secret-ingredients]', { y: '20%' })\n}\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/about/section-secret.js?");
-
-/***/ }),
-
 /***/ "./src/helpers/marqueeScroll.js":
 /*!**************************************!*\
   !*** ./src/helpers/marqueeScroll.js ***!
@@ -137,6 +87,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   marqueeScrollIx: () => (/* binding */ marqueeScrollIx)\n/* harmony export */ });\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\n\nconst marqueeScrollIx = () => {\n  const marqueeList = document.querySelectorAll('[marquee-track]')\n\n  if (marqueeList) {\n    marqueeList.forEach((marqueeItem) => {\n      const marqueeDuration = marqueeItem.getAttribute('marquee-track')\n      let isForward = marqueeItem.getAttribute('is-forward')\n      let isPause = marqueeItem.getAttribute('is-pause')\n\n      const tl = gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].timeline({ repeat: -1 })\n\n      if (isForward == 'false') {\n        tl.to(marqueeItem, {\n          x: '-50%',\n          ease: 'none',\n          duration: marqueeDuration,\n          repeat: -1,\n        })\n      } else {\n        tl.fromTo(\n          marqueeItem,\n          { x: '-50%' },\n          { x: '0%', ease: 'none', duration: marqueeDuration, repeat: -1 }\n        )\n      }\n\n      if (isPause == 'true') {\n        marqueeList.forEach((item) => {\n          item.addEventListener('mouseenter', () => {\n            tl.pause()\n          })\n\n          item.addEventListener('mouseleave', () => {\n            tl.resume()\n          })\n        })\n      }\n    })\n  }\n}\n\nmarqueeScrollIx()\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/helpers/marqueeScroll.js?");
+
+/***/ }),
+
+/***/ "./src/service/index.js":
+/*!******************************!*\
+  !*** ./src/service/index.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap/ScrollTrigger */ \"./node_modules/gsap/ScrollTrigger.js\");\n/* harmony import */ var _about_section_company__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../about/section-company */ \"./src/about/section-company.js\");\n/* harmony import */ var _helpers_marqueeScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/marqueeScroll */ \"./src/helpers/marqueeScroll.js\");\n/* harmony import */ var _section_yes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./section-yes */ \"./src/service/section-yes.js\");\n/* harmony import */ var _section_process__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./section-process */ \"./src/service/section-process.js\");\n\n\n\n\n\n\n\nwindow.addEventListener('DOMContentLoaded', (event) => {\n  gsap__WEBPACK_IMPORTED_MODULE_4__[\"default\"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__[\"default\"])\n\n  ;(0,_helpers_marqueeScroll__WEBPACK_IMPORTED_MODULE_1__.marqueeScrollIx)()\n\n  ;(0,_section_yes__WEBPACK_IMPORTED_MODULE_2__.sectionYes)()\n\n  if (window.innerWidth > 991) {\n    (0,_section_process__WEBPACK_IMPORTED_MODULE_3__.sectionProcess)()\n  }\n\n  (0,_about_section_company__WEBPACK_IMPORTED_MODULE_0__.sectionCompany)()\n})\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/service/index.js?");
+
+/***/ }),
+
+/***/ "./src/service/section-process.js":
+/*!****************************************!*\
+  !*** ./src/service/section-process.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sectionProcess: () => (/* binding */ sectionProcess)\n/* harmony export */ });\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\n\nconst sectionProcess = () => {\n  const horizontalWrapper = document.querySelector('[process-list]')\n\n  const getScrollAmount = () => {\n    let horizontalWrapperWidth = horizontalWrapper.scrollWidth\n    return -(\n      horizontalWrapperWidth -\n      window.innerWidth +\n      window.innerWidth * 0.5\n    )\n  }\n\n  const mainTl = gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].timeline({\n    scrollTrigger: {\n      trigger: '[section-process]',\n      start: 'top 10%',\n      end: `+=${getScrollAmount() * -1}`,\n      //   markers: true,\n      scrub: 1,\n      pin: true,\n    },\n  })\n\n  mainTl.to(horizontalWrapper, {\n    x: getScrollAmount,\n    ease: 'none',\n  })\n}\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/service/section-process.js?");
+
+/***/ }),
+
+/***/ "./src/service/section-yes.js":
+/*!************************************!*\
+  !*** ./src/service/section-yes.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sectionYes: () => (/* binding */ sectionYes)\n/* harmony export */ });\n/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ \"./node_modules/gsap/index.js\");\n\n\nconst sectionYes = () => {\n  //   // Option 1: Using timeline repeat\n  //   const tl = gsap.timeline({\n  //     repeat: -1, // -1 means infinite repeats\n  //     defaults: { ease: 'none' },\n  //   })\n\n  //   const paths = document.querySelectorAll('[yes-marquee] path')\n\n  //   paths.forEach((path) => {\n  //     // Add class\n  //     tl.add(() => path.classList.add('yes-path-active'))\n  //       // Wait 1 second\n  //       .to(path, {\n  //         duration: 0.1,\n  //       })\n  //       // Remove class\n  //       .add(() => path.classList.remove('yes-path-active'))\n  //   })\n\n  // Option 2: Using separate timelines for each path with staggered starts\n  const paths = document.querySelectorAll('[yes-marquee] path')\n  const totalPaths = paths.length\n  const staggerTime = 0.1 // Time between each path starting its animation\n\n  paths.forEach((path, index) => {\n    // Create a timeline for each path\n    const pathTl = gsap__WEBPACK_IMPORTED_MODULE_0__[\"default\"].timeline({\n      repeat: -1,\n      delay: index * staggerTime, // Stagger the start times\n    })\n\n    // Add the animation sequence\n    pathTl\n      .add(() => path.classList.add('yes-path-active'))\n      .to(path, { duration: 0.5 })\n      .add(() => path.classList.remove('yes-path-active'))\n      .to(path, { duration: 0.5 }) // Add a pause before repeating\n  })\n}\n\n\n//# sourceURL=webpack://webflow-developer-starter-template/./src/service/section-yes.js?");
 
 /***/ })
 
@@ -200,7 +180,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/about/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/service/index.js");
 /******/ 	
 /******/ 	return __webpack_exports__;
 /******/ })()
